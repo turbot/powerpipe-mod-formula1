@@ -1,4 +1,4 @@
-# Formula1 Data Analysis Dashboard
+# Formula1 Data Analysis Mod for PowerPipe
 
 Formula 1 race data analysis using SQLite and PowerPipe.
 
