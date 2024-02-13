@@ -2,6 +2,10 @@
 
 Formula 1 race data analysis using SQLite and PowerPipe.
 
+![formula1-analysis-detail-image](https://github.com/turbot/powerpipe-mod-formula1/assets/72413708/4d4512b3-09a6-436a-bffb-8f773c12fc97)
+
+![formula1-analysis-dashboard-image](https://github.com/turbot/powerpipe-mod-formula1/assets/72413708/64420d27-345c-4d06-a401-af805067629d)
+
 ## Installation
 
 Download and install Powerpipe (https://powerpipe.io/downloads). Or use Brew:
