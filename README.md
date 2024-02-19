@@ -2,8 +2,6 @@
 
 Formula 1 race data analysis using SQLite and PowerPipe.
 
-![formula1-analysis-detail-image](https://github.com/turbot/powerpipe-mod-formula1/assets/72413708/4d4512b3-09a6-436a-bffb-8f773c12fc97)
-
 ![formula1-analysis-dashboard-image](https://github.com/turbot/powerpipe-mod-formula1/assets/72413708/64420d27-345c-4d06-a401-af805067629d)
 
 ## Installation
@@ -28,7 +26,7 @@ Download the [Formula 1 Race Data](https://www.kaggle.com/datasets/davidcochran/
 Unzip the file to the cloned mod directory.
 
 ```sh
-unzip /Users/root/Downloads/archive.zip
+unzip /Users/username/Downloads/archive.zip
 ```
 
 ## Usage
