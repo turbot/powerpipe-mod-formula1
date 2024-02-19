@@ -21,7 +21,7 @@ cd powerpipe-mod-formula1
 
 ## Get the Dataset
 
-Download the [Formula 1 Race Data](https://www.kaggle.com/datasets/davidcochran/formula-1-race-data-sqlite).
+Log in to Kaggle, download the [Formula 1 Race Data](https://www.kaggle.com/datasets/davidcochran/formula-1-race-data-sqlite).
 
 Unzip the file to the cloned mod directory.
 
