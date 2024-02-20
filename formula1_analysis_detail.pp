@@ -52,6 +52,7 @@ dashboard "formula1_analysis_detail" {
         query = query.formula1_race_overview
         args  = [self.input.race_id.value]
       }
+
       chart {
         title = "Team Points Distribution"
         width = 6
