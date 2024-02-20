@@ -65,14 +65,14 @@ dashboard "formula1_analysis_detail" {
       table {
         title = "Top 10 Constructor Standings"
         width = 6
-        query = query.formula1_race_constructor_standings
+        query = query.top_10_formula1_race_constructor_standings
         args  = [self.input.race_id.value]
       }
 
       table {
         title = "Top 10 Driver Standings"
         width = 6
-        query = query.formula1_race_driver_standings
+        query = query.top_10_formula1_race_driver_standings
         args  = [self.input.race_id.value]
       }
     }
@@ -82,7 +82,7 @@ dashboard "formula1_analysis_detail" {
       table {
         title = "Top 10 Race Results"
         width = 6
-        query = query.formula1_race_results
+        query = query.top_10_formula1_race_results
         args  = [self.input.race_id.value]
       }
     }
@@ -177,28 +177,6 @@ query "formula1_race_overview" {
   EOQ
 }
 
-query "formula1_race_results" {
-  sql = <<-EOQ
-    select
-      results.position as "Position",
-      drivers.forename || ' ' || drivers.surname as "Driver",
-      constructors.name as "Constructor",
-      results.points as "Points",
-      results.laps as "Laps",
-      results.time as "Time",
-      results.statusId as "Status"
-    from
-      results
-      join drivers on results.driverId = drivers.driverId
-      join constructors on results.constructorId = constructors.constructorId
-    where
-      results.raceId = $1
-    order by
-      results.position
-    limit 10;
-  EOQ
-}
-
 query "formula1_race_team_points_distribution" {
   sql = <<-EOQ
     select
@@ -216,7 +194,7 @@ query "formula1_race_team_points_distribution" {
   EOQ
 }
 
-query "formula1_race_constructor_standings" {
+query "top_10_formula1_race_constructor_standings" {
   sql = <<-EOQ
     select
       constructors.name as "Constructor",
@@ -234,7 +212,7 @@ query "formula1_race_constructor_standings" {
   EOQ
 }
 
-query "formula1_race_driver_standings" {
+query "top_10_formula1_race_driver_standings" {
   sql = <<-EOQ
     select
       drivers.forename || ' ' || drivers.surname as "Driver",
@@ -258,5 +236,27 @@ query "formula1_race_driver_standings" {
     order by
       driver_standings.position, "Average Lap Time"
       limit 10;
+  EOQ
+}
+
+query "top_10_formula1_race_results" {
+  sql = <<-EOQ
+    select
+      results.position as "Position",
+      drivers.forename || ' ' || drivers.surname as "Driver",
+      constructors.name as "Constructor",
+      results.points as "Points",
+      results.laps as "Laps",
+      results.time as "Time",
+      results.statusId as "Status"
+    from
+      results
+      join drivers on results.driverId = drivers.driverId
+      join constructors on results.constructorId = constructors.constructorId
+    where
+      results.raceId = $1
+    order by
+      results.position
+    limit 10;
   EOQ
 }

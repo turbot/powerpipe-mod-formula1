@@ -37,7 +37,7 @@ dashboard "formula1_analysis_dashboard" {
 
     chart {
       title = "Points Per Race by Team"
-      query = query.points_per_game_by_team
+      query = query.points_per_race_by_team
       type  = "pie"
       width = 6
     }
@@ -67,7 +67,7 @@ dashboard "formula1_analysis_dashboard" {
 
     chart {
       title = "Driver Efficiency Rating (PER)"
-      query = query.player_efficiency_rating
+      query = query.driver_efficiency_rating
       type  = "bar"
       width = 6
       axes {
@@ -90,13 +90,13 @@ dashboard "formula1_analysis_dashboard" {
 
     chart {
       title = "Race Scores Over Time"
-      query = query.game_scores_over_time
+      query = query.race_scores_over_time
       type  = "line"
       width = 6
       axes {
         x {
           title {
-            value = "Date"
+            value = "Race Dates"
           }
         }
         y {
@@ -115,7 +115,7 @@ dashboard "formula1_analysis_dashboard" {
       axes {
         x {
           title {
-            value = "Race"
+            value = "Race Dates"
           }
         }
         y {
@@ -202,7 +202,7 @@ query "team_standings_by_conference" {
   EOQ
 }
 
-query "points_per_game_by_team" {
+query "points_per_race_by_team" {
   sql = <<-EOQ
     select constructors.name as "team",
       avg(constructor_standings.points) as "average_points"
@@ -231,7 +231,7 @@ query "top_scorers_of_season" {
   EOQ
 }
 
-query "player_efficiency_rating" {
+query "driver_efficiency_rating" {
   sql = <<-EOQ
     select concat(forename, ' ', surname) as "player",
       avg(driver_standings.points) / avg(laptimes.milliseconds) as "efficiency_rating"
@@ -247,7 +247,7 @@ query "player_efficiency_rating" {
   EOQ
 }
 
-query "game_scores_over_time" {
+query "race_scores_over_time" {
   sql = <<-EOQ
     select date as "date",
       avg(points) as "average_scores"
@@ -284,9 +284,12 @@ query "driver_nationality_distribution" {
     from
       drivers
     group by
-      nationality;
+      nationality
+    order by
+      "driver_count" desc;
   EOQ
 }
+
 query "circuit_location_distribution" {
   sql = <<-EOQ
     select location as "location",
@@ -294,6 +297,8 @@ query "circuit_location_distribution" {
     from
       circuits
     group by
-      location;
+      location
+    order by
+      "circuit_count" desc;
   EOQ
 }
