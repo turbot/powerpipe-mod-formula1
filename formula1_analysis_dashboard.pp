@@ -7,21 +7,25 @@ dashboard "formula1_analysis_dashboard" {
     card {
       query = query.total_races
       width = 3
+      type  = "info"
     }
 
     card {
       query = query.total_drivers
       width = 3
+      type  = "info"
     }
 
     card {
       query = query.total_constructors
       width = 3
+      type  = "info"
     }
 
     card {
       query = query.total_seasons_count
       width = 3
+      type  = "info"
     }
   }
 

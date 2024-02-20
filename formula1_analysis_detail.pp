@@ -13,24 +13,28 @@ dashboard "formula1_analysis_detail" {
     card {
       query = query.formula1_race_winner
       width = 3
+      type  = "info"
       args  = [self.input.race_id.value]
     }
 
     card {
       query = query.formula1_race_average_speed
       width = 3
+      type  = "info"
       args  = [self.input.race_id.value]
     }
 
     card {
       query = query.formula1_race_attendance
       width = 3
+      type  = "info"
       args  = [self.input.race_id.value]
     }
 
     card {
       query = query.formula1_race_fastest_lap
       width = 3
+      type  = "info"
       args  = [self.input.race_id.value]
     }
 
@@ -55,8 +59,6 @@ dashboard "formula1_analysis_detail" {
         query = query.formula1_race_team_points_distribution
         args  = [self.input.race_id.value]
       }
-
-
     }
 
     container {
@@ -86,9 +88,7 @@ dashboard "formula1_analysis_detail" {
         args  = [self.input.race_id.value]
       }
     }
-
   }
-
 }
 
 # Input query
