@@ -19,15 +19,20 @@ git clone https://github.com/turbot/powerpipe-mod-formula1.git
 cd powerpipe-mod-formula1
 ```
 
-## Get the Dataset
+## Install the Dataset
 
-Log in to Kaggle, download the [Formula 1 Race Data](https://www.kaggle.com/datasets/davidcochran/formula-1-race-data-sqlite).
+- Visit the [Formula 1 Race Data](https://www.kaggle.com/datasets/davidcochran/formula-1-race-data-sqlite).
 
-Unzip the file to the cloned mod directory.
+- Click on `Download` (Free signup to Kaggle is required).
 
-```sh
-unzip /Users/username/Downloads/archive.zip
-```
+- Unzip the Downloaded File:
+
+  - For Mac/Linux:
+    - Use the command `unzip ~/Downloads/archive.zip` to extract the file.
+
+  - For Windows:
+    - Navigate to the folder containing the downloaded ZIP file, usually the Downloads folder.
+    - Right-click on the ZIP file and choose `Extract All...` or `Extract Here` depending on your preference. Follow the on-screen instructions to complete the extraction.
 
 ## Usage
 
@@ -35,6 +40,12 @@ Run the dashboard and specify the DB connection string:
 
 ```sh
 powerpipe server --database sqlite:Formula1.sqlite
+```
+
+If you have extracted the file in any other location then you need to provide the full path like below:
+
+```sh
+powerpipe server --database sqlite:///path/to/the/file/file.sqlite
 ```
 
 ## Open Source & Contributing
