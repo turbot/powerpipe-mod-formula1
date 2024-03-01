@@ -1,6 +1,7 @@
-dashboard "formula1_analysis_detail" {
+dashboard "formula1_race_detail" {
 
   title = "Formula 1 Race Detail"
+  documentation = file("./docs/formula1_race_detail.md")
 
   input "race_id" {
     title = "Select a Race:"

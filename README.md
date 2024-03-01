@@ -1,10 +1,26 @@
-# Formula1 Data Analysis Mod for PowerPipe
+# Formula 1 Mod for Powerpipe
 
-Formula 1 race data analysis using SQLite and PowerPipe.
+Formula 1 race data analysis using SQLite and Powerpipe.
 
-![formula1-analysis-dashboard-image](https://github.com/turbot/powerpipe-mod-formula1/assets/72413708/64420d27-345c-4d06-a401-af805067629d)
+![image](https://github.com/turbot/powerpipe-mod-formula1/assets/72413708/64420d27-345c-4d06-a401-af805067629d)
 
-## Installation
+## Overview
+
+Dashboards can help answer questions like:
+
+- How many Formula 1 races have been held?
+- What is the total number of drivers?
+- How many constructors are there in Formula 1?
+- How many seasons of Formula 1 racing have occurred?
+- What is the distribution of team standings by conference?
+
+## Documentation
+
+- **[Dashboards →](https://hub.powerpipe.io/mods/turbot/formula1/dashboards)**
+
+## Getting Started
+
+### Installation
 
 Download and install Powerpipe (https://powerpipe.io/downloads). Or use Brew:
 
@@ -19,20 +35,13 @@ git clone https://github.com/turbot/powerpipe-mod-formula1.git
 cd powerpipe-mod-formula1
 ```
 
-## Install the Dataset
+Download the [Formula 1 Race Data](https://www.kaggle.com/datasets/davidcochran/formula-1-race-data-sqlite) (requires signup with [Kaggle](https://www.kaggle.com/))
 
-- Visit the [Formula 1 Race Data](https://www.kaggle.com/datasets/davidcochran/formula-1-race-data-sqlite).
+Extract the downloaded file in the current directory:
 
-- Click on `Download` (Free signup to Kaggle is required).
-
-- Unzip the Downloaded File:
-
-  - For Mac/Linux:
-    - Use the command `unzip ~/Downloads/archive.zip` to extract the file.
-
-  - For Windows:
-    - Navigate to the folder containing the downloaded ZIP file, usually the Downloads folder.
-    - Right-click on the ZIP file and choose `Extract All...` or `Extract Here` depending on your preference. Follow the on-screen instructions to complete the extraction.
+```sh
+unzip ~/Downloads/archive.zip
+```
 
 ## Usage
 
@@ -40,12 +49,6 @@ Run the dashboard and specify the DB connection string:
 
 ```sh
 powerpipe server --database sqlite:Formula1.sqlite
-```
-
-If you have extracted the file in any other location then you need to provide the full path like below:
-
-```sh
-powerpipe server --database sqlite:///path/to/the/file/file.sqlite
 ```
 
 ## Open Source & Contributing

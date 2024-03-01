@@ -1,29 +1,31 @@
-dashboard "formula1_analysis_dashboard" {
-  title = "Formula 1 Racing Analysis Dashboard"
+dashboard "formula1_dashboard" {
+
+  title         = "Formula 1 Dashboard"
+  documentation = file("./docs/formula1_dashboard.md")
 
   container {
     title = "Overview"
 
     card {
-      query = query.total_races
+      query = query.formula1_races_count
       width = 3
       type  = "info"
     }
 
     card {
-      query = query.total_drivers
+      query = query.formula1_drivers_count
       width = 3
       type  = "info"
     }
 
     card {
-      query = query.total_constructors
+      query = query.formula1_costructors_count
       width = 3
       type  = "info"
     }
 
     card {
-      query = query.total_seasons_count
+      query = query.formula1_seasons_count
       width = 3
       type  = "info"
     }
@@ -34,14 +36,14 @@ dashboard "formula1_analysis_dashboard" {
 
     chart {
       title = "Team Standings by Conference"
-      query = query.team_standings_by_conference
+      query = query.formula1_team_standings_by_conference
       type  = "pie"
       width = 6
     }
 
     chart {
       title = "Points Per Race by Team"
-      query = query.points_per_race_by_team
+      query = query.formula1_points_per_race_by_team
       type  = "pie"
       width = 6
     }
@@ -52,7 +54,7 @@ dashboard "formula1_analysis_dashboard" {
 
     chart {
       title = "Top Scorers of the Season"
-      query = query.top_scorers_of_season
+      query = query.formula1_top_scorers_of_season
       type  = "column"
       width = 6
       axes {
@@ -71,7 +73,7 @@ dashboard "formula1_analysis_dashboard" {
 
     chart {
       title = "Driver Efficiency Rating (PER)"
-      query = query.driver_efficiency_rating
+      query = query.formula1_driver_efficiency_rating
       type  = "bar"
       width = 6
       axes {
@@ -94,7 +96,7 @@ dashboard "formula1_analysis_dashboard" {
 
     chart {
       title = "Race Scores Over Time"
-      query = query.race_scores_over_time
+      query = query.formula1_race_scores_over_time
       type  = "line"
       width = 6
       axes {
@@ -113,7 +115,7 @@ dashboard "formula1_analysis_dashboard" {
 
     chart {
       title = "Average Attendance per Race"
-      query = query.average_attendance_per_game
+      query = query.formula1_average_attendance_per_game
       type  = "line"
       width = 6
       axes {
@@ -136,14 +138,14 @@ dashboard "formula1_analysis_dashboard" {
 
     chart {
       title = "Distribution of Drivers by Nationality"
-      query = query.driver_nationality_distribution
+      query = query.formula1_driver_nationality_distribution
       type  = "donut"
       width = 6
     }
 
     chart {
       title = "Distribution of Circuits by Location"
-      query = query.circuit_location_distribution
+      query = query.formula1_circuit_location_distribution
       type  = "donut"
       width = 6
     }
@@ -152,7 +154,7 @@ dashboard "formula1_analysis_dashboard" {
 
 # Card Queries
 
-query "total_races" {
+query "formula1_races_count" {
   sql = <<-EOQ
     select
       count(*) as "Total Races"
@@ -161,7 +163,7 @@ query "total_races" {
   EOQ
 }
 
-query "total_drivers" {
+query "formula1_drivers_count" {
   sql = <<-EOQ
     select
       count(distinct driverId) as "Total Drivers"
@@ -170,7 +172,7 @@ query "total_drivers" {
   EOQ
 }
 
-query "total_constructors" {
+query "formula1_costructors_count" {
   sql = <<-EOQ
     select
       count(distinct constructorId) as "Total Constructors"
@@ -179,7 +181,7 @@ query "total_constructors" {
   EOQ
 }
 
-query "total_seasons_count" {
+query "formula1_seasons_count" {
   sql = <<-EOQ
     select
       count(*) as "Total Seasons"
@@ -190,7 +192,7 @@ query "total_seasons_count" {
 
 # Chart Queries
 
-query "team_standings_by_conference" {
+query "formula1_team_standings_by_conference" {
   sql = <<-EOQ
     select
       constructors.name as "team",
@@ -206,7 +208,7 @@ query "team_standings_by_conference" {
   EOQ
 }
 
-query "points_per_race_by_team" {
+query "formula1_points_per_race_by_team" {
   sql = <<-EOQ
     select constructors.name as "team",
       avg(constructor_standings.points) as "average_points"
@@ -220,7 +222,7 @@ query "points_per_race_by_team" {
   EOQ
 }
 
-query "top_scorers_of_season" {
+query "formula1_top_scorers_of_season" {
   sql = <<-EOQ
     select concat(forename, ' ', surname) as "player",
       avg(points) as "average_points_per_game"
@@ -235,7 +237,7 @@ query "top_scorers_of_season" {
   EOQ
 }
 
-query "driver_efficiency_rating" {
+query "formula1_driver_efficiency_rating" {
   sql = <<-EOQ
     select concat(forename, ' ', surname) as "player",
       avg(driver_standings.points) / avg(laptimes.milliseconds) as "efficiency_rating"
@@ -251,7 +253,7 @@ query "driver_efficiency_rating" {
   EOQ
 }
 
-query "race_scores_over_time" {
+query "formula1_race_scores_over_time" {
   sql = <<-EOQ
     select date as "date",
       avg(points) as "average_scores"
@@ -263,7 +265,7 @@ query "race_scores_over_time" {
   EOQ
 }
 
-query "average_attendance_per_game" {
+query "formula1_average_attendance_per_game" {
   sql = <<-EOQ
     select date as "game",
       avg(total_results) as "average_attendance"
@@ -281,7 +283,7 @@ query "average_attendance_per_game" {
   EOQ
 }
 
-query "driver_nationality_distribution" {
+query "formula1_driver_nationality_distribution" {
   sql = <<-EOQ
     select nationality as "nationality",
       count(*) as "driver_count"
@@ -294,7 +296,7 @@ query "driver_nationality_distribution" {
   EOQ
 }
 
-query "circuit_location_distribution" {
+query "formula1_circuit_location_distribution" {
   sql = <<-EOQ
     select location as "location",
       count(*) as "circuit_count"
