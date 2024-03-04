@@ -2,7 +2,7 @@
 
 Formula 1 race data analysis using SQLite and Powerpipe.
 
-![image](https://github.com/turbot/powerpipe-mod-formula1/assets/72413708/64420d27-345c-4d06-a401-af805067629d)
+![image](https://github.com/turbot/powerpipe-mod-formula1/blob/add-detail-dashboard/docs/formula1_dashboard_screenshot.png)
 
 ## Overview
 
