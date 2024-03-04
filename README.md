@@ -35,7 +35,7 @@ git clone https://github.com/turbot/powerpipe-mod-formula1.git
 cd powerpipe-mod-formula1
 ```
 
-Download the [Formula 1 Race Data](https://www.kaggle.com/datasets/davidcochran/formula-1-race-data-sqlite) (requires signup with [Kaggle](https://www.kaggle.com/))
+Download the [Formula 1 Race Data](https://www.kaggle.com/datasets/davidcochran/formula-1-race-data-sqlite/versions/4) (requires signup with [Kaggle](https://www.kaggle.com/))
 
 Extract the downloaded file in the current directory:
 
