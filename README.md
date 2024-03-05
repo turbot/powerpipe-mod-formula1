@@ -39,7 +39,7 @@ powerpipe mod install github.com/turbot/powerpipe-mod-formula1
 
 Download the [Formula 1 Race Data](https://www.kaggle.com/datasets/davidcochran/formula-1-race-data-sqlite/versions/4) (requires signup with [Kaggle](https://www.kaggle.com/))
 
-Extract the downloaded file in the current directory:
+Extract the downloaded file into the dashboards directory:
 
 ```sh
 unzip ~/Downloads/archive.zip
