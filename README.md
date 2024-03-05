@@ -1,6 +1,6 @@
 # Formula 1 Mod for Powerpipe
 
-Formula 1 race data analysis using [SQLite](https://sqlite.org) and [Powerpipe](https://powerpipe.io).
+Analyze [Formula 1](https://www.formula1.com/) race data using [SQLite](https://sqlite.org) and [Powerpipe](https://powerpipe.io).
 
 ![image](https://github.com/turbot/powerpipe-mod-formula1/blob/add-detail-dashboard/docs/formula1_dashboard_screenshot.png)
 
