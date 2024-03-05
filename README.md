@@ -28,11 +28,13 @@ Download and install Powerpipe (https://powerpipe.io/downloads). Or use Brew:
 brew install turbot/tap/powerpipe
 ```
 
-## Clone the Mod Repository
+Install the mod:
 
 ```sh
-git clone https://github.com/turbot/powerpipe-mod-formula1.git
-cd powerpipe-mod-formula1
+mkdir dashboards
+cd dashboards
+powerpipe mod init
+powerpipe mod install github.com/turbot/powerpipe-mod-formula1
 ```
 
 Download the [Formula 1 Race Data](https://www.kaggle.com/datasets/davidcochran/formula-1-race-data-sqlite/versions/4) (requires signup with [Kaggle](https://www.kaggle.com/))
