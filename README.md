@@ -2,7 +2,7 @@
 
 View dashboards to analyze [Formula 1](https://www.formula1.com/) teams, drivers, race analytics, and more.
 
-![image](https://github.com/turbot/powerpipe-mod-formula1/blob/main/docs/formula1_dashboard_screenshot.png)
+![image](https://raw.githubusercontent.com/turbot/powerpipe-mod-formula1/main/docs/formula1_dashboard_screenshot.png)
 
 ## Overview
 
