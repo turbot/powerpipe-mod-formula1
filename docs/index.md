@@ -1,18 +1,8 @@
-# Formula 1 Mod for Powerpipe
+# Formula 1 Mod
 
 View dashboards to analyze [Formula 1](https://www.formula1.com/) teams, drivers, race analytics, and more.
 
-![image](https://raw.githubusercontent.com/turbot/powerpipe-mod-formula1/main/docs/formula1_dashboard_screenshot.png)
-
-## Overview
-
-Dashboards can help answer questions like:
-
-- How many Formula 1 races have been held?
-- What is the total number of drivers?
-- How many constructors are there in Formula 1?
-- How many seasons of Formula 1 racing have occurred?
-- What is the distribution of team standings by conference?
+<img src="https://raw.githubusercontent.com/turbot/powerpipe-mod-formula1/main/docs/formula1_dashboard_screenshot.png" width="50%" type="thumbnail"/>
 
 ## Documentation
 
