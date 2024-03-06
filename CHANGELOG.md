@@ -3,5 +3,5 @@
 _What's new?_
 
 - New dashboard:
-  - Formula 1 Dashboard. ([#1](https://github.com/turbot/powerpipe-mod-formula1/pull/1))
-  - Formula 1 Race Detail. ([#1](https://github.com/turbot/powerpipe-mod-formula1/pull/1))
+  - [Formula 1 Dashboard](https://hub.powerpipe.io/mods/turbot/powerpipe-mod-formula1/dashboard.formula1_dashboard)
+  - [Formula 1 Race Detail](https://hub.powerpipe.io/mods/turbot/powerpipe-mod-formula1/dashboard.formula1_race_detail)
